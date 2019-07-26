@@ -2,12 +2,12 @@
     &-row {
         display: flex;
         flex-wrap: wrap;
+        @include flexGlobal();
     }
 
     &-group {
         flex: 1 1 auto;
 
-        @include flexAlign();
         @include flexSize();
     }
 
