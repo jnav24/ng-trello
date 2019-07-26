@@ -3,6 +3,12 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     @include flexGlobal();
+
+    &.grid-list {
+        .flex {
+            padding: 4px;
+        }
+    }
 }
 
 .flex {
