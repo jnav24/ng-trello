@@ -8,6 +8,8 @@ import {MatInputModule, MatProgressSpinnerModule, MatSelectModule} from '@angula
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { StoreModule } from '@ngrx/store';
+import {TrelloReducer} from './store/reducers/trello.reducer';
 
 
 @NgModule({
@@ -24,6 +26,9 @@ import { SearchComponent } from './search/search.component';
         MatInputModule,
         MatProgressSpinnerModule,
         MatSelectModule,
+        StoreModule.forRoot({
+            trello: TrelloReducer,
+        }),
     ],
     providers: [],
     bootstrap: [AppComponent]
