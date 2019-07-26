@@ -10,8 +10,8 @@
                     <mat-form-field class="form-full">
                         <mat-label>Boards</mat-label>
                         <mat-select>
-                            <mat-option>
-                                Erased
+                            <mat-option *ngFor="let board of trelloBoards$ | async">
+                                {{ board.name }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
