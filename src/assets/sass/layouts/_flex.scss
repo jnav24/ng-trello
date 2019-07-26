@@ -1,0 +1,30 @@
+.layout {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.justify-start {
+        justify-content: flex-start;
+    }
+
+    &.justify-end {
+        justify-content: flex-end;
+    }
+}
+
+.flex {
+    flex: 1 1 auto;
+
+    &.lg-8 {
+        flex-basis: 66%;
+        flex-grow: 0;
+    }
+}
