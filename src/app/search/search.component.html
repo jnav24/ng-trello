@@ -29,8 +29,8 @@
                     <mat-form-field class="form-full">
                         <mat-label>Lists</mat-label>
                         <mat-select>
-                            <mat-option>
-                                Erased
+                            <mat-option *ngFor="let list of trelloLists$ | async">
+                                {{ list.name }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -40,8 +40,8 @@
                     <mat-form-field class="form-full">
                         <mat-label>Labels</mat-label>
                         <mat-select>
-                            <mat-option>
-                                Erased
+                            <mat-option *ngFor="let label of trelloLabels$ | async">
+                                {{ label.name }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>

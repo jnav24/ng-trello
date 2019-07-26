@@ -19,6 +19,10 @@ export function TrelloReducer(state: TrelloModel = initialState, action: TrelloA
     switch (action.type) {
         case TrelloTypes.ADD_BOARDS:
             return { ...state, boards: action.payload };
+        case TrelloTypes.ADD_LABELS:
+            return { ...state, labels: action.payload };
+        case TrelloTypes.ADD_LISTS:
+            return { ...state, lists: action.payload };
         default:
             return state;
     }

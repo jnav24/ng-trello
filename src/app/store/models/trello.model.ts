@@ -4,6 +4,16 @@ export interface TrelloBoardsModel {
     url: string;
 }
 
+export interface TrelloLabelsModel {
+    id: string;
+    name: string;
+}
+
+export interface TrelloListsModel {
+    id: string;
+    name: string;
+}
+
 export interface TrelloModel {
     boards: TrelloBoardsModel[];
     labels: any[];
