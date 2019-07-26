@@ -1,2 +1,25 @@
 <app-search></app-search>
-<p>home works!</p>
+
+<div class="layout justify-center" style="margin-top: 65px;">
+    <div class="flex lg8 xl8">
+        <div class="text-center">
+            <!-- if selected board value is empty -->
+            <div>
+                Select board to display cards
+            </div>
+
+            <!-- if selected board value is NOT empty and there are no cards -->
+            <div>
+                <!-- if state is not loading -->
+                <div>
+                    This board has no cards
+                </div>
+
+                <!-- if state is loading -->
+                <div v-if="isLoading">
+                    <p>Trello cards are loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
