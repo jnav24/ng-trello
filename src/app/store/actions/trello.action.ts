@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {TrelloModel} from '../models/trello.model';
+import {TrelloBoardsModel} from '../models/trello.model';
 
 export enum TrelloTypes {
     ADD_BOARDS = '[TRELLO] Add Boards',
@@ -10,7 +10,7 @@ export enum TrelloTypes {
 export class AddBoardAction implements Action {
     readonly type = TrelloTypes.ADD_BOARDS;
 
-    constructor(public payload: TrelloModel) {}
+    constructor(public payload: TrelloBoardsModel[]) {}
 }
 
 export type TrelloAction = AddBoardAction;

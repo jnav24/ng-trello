@@ -1,5 +1,11 @@
+export interface TrelloBoardsModel {
+    id: string;
+    name: string;
+    url: string;
+}
+
 export interface TrelloModel {
-    boards: any[];
+    boards: TrelloBoardsModel[];
     labels: any[];
     lists: any[];
     cards: any[];
