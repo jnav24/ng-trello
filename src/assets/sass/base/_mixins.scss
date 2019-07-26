@@ -1,0 +1,59 @@
+@mixin breakpoint($size, $onlyCurrentSize: false) {
+    @if $onlyCurrentSize == true {
+        @media screen and (min-width: map-get(map-get($breakpoints, $size), min)) and (max-width: map-get(map-get($breakpoints, $size), max)) {
+            @content;
+        }
+    } @else {
+        @media screen and (max-width: map-get(map-get($breakpoints, $size), max)) {
+            @content;
+        }
+    }
+}
+
+@mixin flexAlign() {
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.justify-start {
+        justify-content: flex-start;
+    }
+
+    &.justify-end {
+        justify-content: flex-end;
+    }
+
+    &.justify-space-between {
+        justify-content: space-between;
+    }
+
+    &.justify-space-around {
+        justify-content: space-around;
+    }
+
+    &.justify-space-evenly {
+        justify-content: space-evenly;
+    }
+}
+
+@mixin flexCol($columns) {
+    $size: (($columns/12)*100) + 0%;
+    flex-basis: $size;
+    flex-grow: 0;
+    max-width: $size;
+}
+
+@mixin flexSize() {
+    $sizes: ('xs', 'sm', 'md', 'lg', 'xl');
+    $columns: 12;
+
+    @each $size in $sizes {
+        @include breakpoint($size) {
+            @for $int from 1 through $columns {
+                &.#{$size}-#{$int}, &.#{$size}#{$int} {
+                    @include flexCol($int);
+                }
+            }
+        }
+    }
+}
