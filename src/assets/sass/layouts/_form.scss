@@ -1,0 +1,38 @@
+.form {
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-group {
+        flex: 1 1 auto;
+
+        &.justify-center {
+            justify-content: center;
+        }
+
+        &.justify-start {
+            justify-content: flex-start;
+        }
+
+        &.justify-end {
+            justify-content: flex-end;
+        }
+
+        &.justify-space-between {
+            justify-content: space-between;
+        }
+
+        &.justify-space-around {
+            justify-content: space-around;
+        }
+
+        &.justify-space-evenly {
+            justify-content: space-evenly;
+        }
+    }
+
+    &-full {
+        width: 100%;
+    }
+}

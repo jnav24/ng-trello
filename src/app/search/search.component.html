@@ -1,3 +1,52 @@
 <div class="layout justify-center">
-    <mat-card class="flex lg-8">Simple card</mat-card>
+    <mat-card class="flex lg-8">
+        <mat-card-title class="text-center fw-t">
+            Search Trello
+        </mat-card-title>
+
+        <mat-card-content>
+            <div class="form-row">
+                <div class="form-group">
+                    <mat-form-field class="form-full">
+                        <mat-label>Boards</mat-label>
+                        <mat-select>
+                            <mat-option>
+                                Erased
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <mat-form-field class="form-full">
+                        <input type="text" matInput placeholder="Search by name">
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field class="form-full">
+                        <mat-label>Lists</mat-label>
+                        <mat-select>
+                            <mat-option>
+                                Erased
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field class="form-full">
+                        <mat-label>Labels</mat-label>
+                        <mat-select>
+                            <mat-option>
+                                Erased
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>
