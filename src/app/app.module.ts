@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-import {MatInputModule, MatSelectModule} from '@angular/material';
+import {MatInputModule, MatProgressSpinnerModule, MatSelectModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +22,7 @@ import { SearchComponent } from './search/search.component';
         BrowserAnimationsModule,
         MatCardModule,
         MatInputModule,
+        MatProgressSpinnerModule,
         MatSelectModule,
     ],
     providers: [],

@@ -18,6 +18,12 @@
                 <!-- if state is loading -->
                 <div v-if="isLoading">
                     <p>Trello cards are loading...</p>
+
+                    <mat-progress-spinner
+                        style="display: inline-block;"
+                        diameter="50"
+                        mode="indeterminate">
+                    </mat-progress-spinner>
                 </div>
             </div>
         </div>
