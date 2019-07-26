@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { StoreModule } from '@ngrx/store';
 import {TrelloReducer} from './store/reducers/trello.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import {TrelloReducer} from './store/reducers/trello.reducer';
         StoreModule.forRoot({
             trello: TrelloReducer,
         }),
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     ],
     providers: [],
     bootstrap: [AppComponent]
