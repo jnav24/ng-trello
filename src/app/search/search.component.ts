@@ -32,25 +32,52 @@ export class SearchComponent implements OnInit {
         this.store.dispatch(new GetAllBoards());
     }
 
+    resetEverything() {
+        // reset card state
+        // reset label state
+        // reset list state
+        this.resetForm();
+    }
+
+    resetForm(resetBoards: boolean = false) {
+        if (resetBoards) {
+            this.form.board = '';
+        }
+
+        this.form.label = '';
+        this.form.list = '';
+        this.form.search = '';
+        // reset the selected state
+    }
+
     updateBoard() {
         console.log('update board');
+        this.resetEverything();
+        // add board value to selected board state
+        // get all cards
+        // get all labels
+        // get all lists
     }
 
     updateLabel() {
         console.log('update label');
+        // add selected label state
     }
 
     updateList() {
         console.log('update list');
+        // add selected list state
     }
 
     updateSearch(e) {
         if (e instanceof FocusEvent) {
             console.log('blurred: ' + this.form.search);
+            // add selected search state
         }
 
         if (e instanceof KeyboardEvent && e.key === 'Enter') {
             console.log('key down: ' + this.form.search);
+            // add selected search state
         }
     }
 }
