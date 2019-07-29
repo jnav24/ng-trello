@@ -20,11 +20,13 @@ import {TrelloService} from './services/trello.service';
 
 import {BoardEffect} from './store/effects/board.effect';
 import {LabelEffect} from './store/effects/label.effect';
+import {ListEffect} from './store/effects/list.effect';
 import {TrelloEffect} from './store/effects/trello.effect';
 
 import {BoardReducer} from './store/reducers/board.reducer';
 import {LabelReducer} from './store/reducers/label.reducer';
 import {TrelloReducer} from './store/reducers/trello.reducer';
+import {ListReducer} from './store/reducers/list.reducer';
 
 
 
@@ -41,6 +43,7 @@ import {TrelloReducer} from './store/reducers/trello.reducer';
         EffectsModule.forRoot([
             BoardEffect,
             LabelEffect,
+            ListEffect,
             TrelloEffect,
         ]),
         FormsModule,
@@ -52,6 +55,7 @@ import {TrelloReducer} from './store/reducers/trello.reducer';
         StoreModule.forRoot({
             board: BoardReducer,
             label: LabelReducer,
+            list: ListReducer,
             trello: TrelloReducer,
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
