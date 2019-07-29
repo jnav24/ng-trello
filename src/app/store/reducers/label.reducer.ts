@@ -6,9 +6,9 @@ const initState = [];
 
 export function LabelReducer(state: LabelModel[] = initState, action: LabelAction) {
     switch (action.type) {
-        case LabelType.ADD_LABEL:
+        case LabelType.ADD_LABELS:
             return [ ...action.payload ];
-        case LabelType.RESET_LABEL:
+        case LabelType.RESET_LABELS:
             return [];
         default:
             return state;

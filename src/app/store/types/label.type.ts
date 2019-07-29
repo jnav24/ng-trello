@@ -1,5 +1,5 @@
 export enum LabelType {
-    ADD_LABEL = '[LABEL] Add Label',
-    GET_LABEL = '[LABEL] Add Label',
-    RESET_LABEL = '[LABEL] Add Label',
+    ADD_LABELS = '[LABEL] Add Labels',
+    GET_LABELS = '[LABEL] Get Labels',
+    RESET_LABELS = '[LABEL] Reset Labels',
 }
