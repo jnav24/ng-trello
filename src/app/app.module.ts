@@ -4,18 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule, MatProgressSpinnerModule, MatSelectModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { StoreModule } from '@ngrx/store';
 import {TrelloReducer} from './store/reducers/trello.reducer';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {TrelloService} from './services/trello.service';
-import {EffectsModule} from '@ngrx/effects';
 import {TrelloEffect} from './store/effects/trello.effect';
-import {HttpClientModule} from '@angular/common/http';
+
 
 
 @NgModule({
@@ -25,12 +27,13 @@ import {HttpClientModule} from '@angular/common/http';
         SearchComponent
     ],
     imports: [
-        BrowserModule,
         AppRoutingModule,
+        BrowserModule,
         BrowserAnimationsModule,
         EffectsModule.forRoot([
             TrelloEffect,
         ]),
+        FormsModule,
         HttpClientModule,
         MatCardModule,
         MatInputModule,
