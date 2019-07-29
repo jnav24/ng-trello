@@ -2,8 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {AppState} from '../store/app.state';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {TrelloBoardsModel, TrelloLabelsModel, TrelloListsModel} from '../store/models/trello.model';
 import {GetAllBoardsAction} from '../store/actions/board.action';
+import {BoardsModel} from '../store/models/board.model';
+import {LabelModel} from '../store/models/label.model';
+import {ListModel} from '../store/models/list.model';
 
 @Component({
     selector: 'app-search',
@@ -11,9 +13,9 @@ import {GetAllBoardsAction} from '../store/actions/board.action';
     styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-    trelloBoards$: Observable<TrelloBoardsModel[]>;
-    trelloLabels$: Observable<TrelloLabelsModel[]>;
-    trelloLists$: Observable<TrelloListsModel[]>;
+    trelloBoards$: Observable<BoardsModel[]>;
+    trelloLabels$: Observable<LabelModel[]>;
+    trelloLists$: Observable<ListModel[]>;
     form: any = {
         board: '',
         label: '',
@@ -27,8 +29,8 @@ export class SearchComponent implements OnInit {
 
     ngOnInit() {
         this.trelloBoards$ = this.store.select(store => store.boards);
-        this.trelloLabels$ = this.store.select(store => store.trello.labels);
-        this.trelloLists$ = this.store.select(store => store.trello.lists);
+        this.trelloLabels$ = this.store.select(store => store.labels);
+        this.trelloLists$ = this.store.select(store => store.list);
         this.store.dispatch(new GetAllBoardsAction());
     }
 

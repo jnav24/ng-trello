@@ -22,13 +22,11 @@ import {BoardEffect} from './store/effects/board.effect';
 import {CardEffect} from './store/effects/card.effect';
 import {LabelEffect} from './store/effects/label.effect';
 import {ListEffect} from './store/effects/list.effect';
-import {TrelloEffect} from './store/effects/trello.effect';
 
 import {BoardReducer} from './store/reducers/board.reducer';
-import {LabelReducer} from './store/reducers/label.reducer';
-import {TrelloReducer} from './store/reducers/trello.reducer';
-import {ListReducer} from './store/reducers/list.reducer';
 import {CardReducer} from './store/reducers/card.reducer';
+import {LabelReducer} from './store/reducers/label.reducer';
+import {ListReducer} from './store/reducers/list.reducer';
 import {SelectedReducer} from './store/reducers/selected.reducer';
 
 
@@ -48,7 +46,6 @@ import {SelectedReducer} from './store/reducers/selected.reducer';
             CardEffect,
             LabelEffect,
             ListEffect,
-            TrelloEffect,
         ]),
         FormsModule,
         HttpClientModule,
@@ -62,7 +59,6 @@ import {SelectedReducer} from './store/reducers/selected.reducer';
             label: LabelReducer,
             list: ListReducer,
             selected: SelectedReducer,
-            trello: TrelloReducer,
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     ],
