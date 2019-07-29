@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {BoardTypes} from '../types/board.types';
+import {BoardTypes} from '../types/board.type';
 import {BoardsModel} from '../models/board.model';
 
 export class AddBoardAction implements Action {

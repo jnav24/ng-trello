@@ -2,7 +2,7 @@ import {TrelloService} from '../../services/trello.service';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {catchError, map, switchMap} from 'rxjs/internal/operators';
 import {AddBoardAction, BoardAction, ResetBoardAction} from '../actions/board.action';
-import {BoardTypes} from '../types/board.types';
+import {BoardTypes} from '../types/board.type';
 import {Injectable} from '@angular/core';
 import {of} from 'rxjs';
 

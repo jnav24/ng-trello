@@ -1,5 +1,5 @@
 import {BoardAction} from '../actions/board.action';
-import {BoardTypes} from '../types/board.types';
+import {BoardTypes} from '../types/board.type';
 
 const initState = [];
 
