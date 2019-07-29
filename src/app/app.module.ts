@@ -13,10 +13,16 @@ import {EffectsModule} from '@ngrx/effects';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import {TrelloReducer} from './store/reducers/trello.reducer';
+
 import { environment } from '../environments/environment';
+
 import {TrelloService} from './services/trello.service';
+
 import {TrelloEffect} from './store/effects/trello.effect';
+import {BoardEffect} from './store/effects/board.effect';
+
+import {BoardReducer} from './store/reducers/board.reducer';
+import {TrelloReducer} from './store/reducers/trello.reducer';
 
 
 
@@ -31,6 +37,7 @@ import {TrelloEffect} from './store/effects/trello.effect';
         BrowserModule,
         BrowserAnimationsModule,
         EffectsModule.forRoot([
+            BoardEffect,
             TrelloEffect,
         ]),
         FormsModule,
@@ -40,6 +47,7 @@ import {TrelloEffect} from './store/effects/trello.effect';
         MatProgressSpinnerModule,
         MatSelectModule,
         StoreModule.forRoot({
+            board: BoardReducer,
             trello: TrelloReducer,
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),

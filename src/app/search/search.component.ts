@@ -3,7 +3,7 @@ import {AppState} from '../store/app.state';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {TrelloBoardsModel, TrelloLabelsModel, TrelloListsModel} from '../store/models/trello.model';
-import {GetAllBoards} from '../store/actions/trello.action';
+import {GetAllBoardsAction} from '../store/actions/board.action';
 
 @Component({
     selector: 'app-search',
@@ -26,10 +26,10 @@ export class SearchComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.trelloBoards$ = this.store.select(store => store.trello.boards);
+        this.trelloBoards$ = this.store.select(store => store.boards);
         this.trelloLabels$ = this.store.select(store => store.trello.labels);
         this.trelloLists$ = this.store.select(store => store.trello.lists);
-        this.store.dispatch(new GetAllBoards());
+        this.store.dispatch(new GetAllBoardsAction());
     }
 
     resetEverything() {
