@@ -18,12 +18,13 @@ import { environment } from '../environments/environment';
 
 import {TrelloService} from './services/trello.service';
 
-import {TrelloEffect} from './store/effects/trello.effect';
 import {BoardEffect} from './store/effects/board.effect';
+import {LabelEffect} from './store/effects/label.effect';
+import {TrelloEffect} from './store/effects/trello.effect';
 
 import {BoardReducer} from './store/reducers/board.reducer';
-import {TrelloReducer} from './store/reducers/trello.reducer';
 import {LabelReducer} from './store/reducers/label.reducer';
+import {TrelloReducer} from './store/reducers/trello.reducer';
 
 
 
@@ -39,6 +40,7 @@ import {LabelReducer} from './store/reducers/label.reducer';
         BrowserAnimationsModule,
         EffectsModule.forRoot([
             BoardEffect,
+            LabelEffect,
             TrelloEffect,
         ]),
         FormsModule,
