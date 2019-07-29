@@ -29,6 +29,7 @@ import {LabelReducer} from './store/reducers/label.reducer';
 import {TrelloReducer} from './store/reducers/trello.reducer';
 import {ListReducer} from './store/reducers/list.reducer';
 import {CardReducer} from './store/reducers/card.reducer';
+import {SelectedReducer} from './store/reducers/selected.reducer';
 
 
 
@@ -60,6 +61,7 @@ import {CardReducer} from './store/reducers/card.reducer';
             card: CardReducer,
             label: LabelReducer,
             list: ListReducer,
+            selected: SelectedReducer,
             trello: TrelloReducer,
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
