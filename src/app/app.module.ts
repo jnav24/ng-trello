@@ -54,9 +54,9 @@ import {SelectedReducer} from './store/reducers/selected.reducer';
         MatProgressSpinnerModule,
         MatSelectModule,
         StoreModule.forRoot({
-            board: BoardReducer,
-            card: CardReducer,
-            label: LabelReducer,
+            boards: BoardReducer,
+            cards: CardReducer,
+            labels: LabelReducer,
             list: ListReducer,
             selected: SelectedReducer,
         }),

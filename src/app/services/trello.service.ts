@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {TrelloBoardsModel} from '../store/models/trello.model';
 import {environment} from '../../environments/environment';
+import {BoardsModel} from '../store/models/board.model';
 
 @Injectable()
 export class TrelloService {
@@ -19,6 +19,6 @@ export class TrelloService {
             fields: 'name,url',
             token: this.token,
         };
-        return this.http.get<TrelloBoardsModel[]>(`${this.url}members/me/boards`, { params });
+        return this.http.get<BoardsModel[]>(`${this.url}members/me/boards`, { params });
     }
 }
