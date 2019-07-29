@@ -23,6 +23,7 @@ import {BoardEffect} from './store/effects/board.effect';
 
 import {BoardReducer} from './store/reducers/board.reducer';
 import {TrelloReducer} from './store/reducers/trello.reducer';
+import {LabelReducer} from './store/reducers/label.reducer';
 
 
 
@@ -48,6 +49,7 @@ import {TrelloReducer} from './store/reducers/trello.reducer';
         MatSelectModule,
         StoreModule.forRoot({
             board: BoardReducer,
+            label: LabelReducer,
             trello: TrelloReducer,
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
