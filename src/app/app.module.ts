@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import {TrelloService} from './services/trello.service';
 
 import {BoardEffect} from './store/effects/board.effect';
+import {CardEffect} from './store/effects/card.effect';
 import {LabelEffect} from './store/effects/label.effect';
 import {ListEffect} from './store/effects/list.effect';
 import {TrelloEffect} from './store/effects/trello.effect';
@@ -27,6 +28,7 @@ import {BoardReducer} from './store/reducers/board.reducer';
 import {LabelReducer} from './store/reducers/label.reducer';
 import {TrelloReducer} from './store/reducers/trello.reducer';
 import {ListReducer} from './store/reducers/list.reducer';
+import {CardReducer} from './store/reducers/card.reducer';
 
 
 
@@ -42,6 +44,7 @@ import {ListReducer} from './store/reducers/list.reducer';
         BrowserAnimationsModule,
         EffectsModule.forRoot([
             BoardEffect,
+            CardEffect,
             LabelEffect,
             ListEffect,
             TrelloEffect,
@@ -54,6 +57,7 @@ import {ListReducer} from './store/reducers/list.reducer';
         MatSelectModule,
         StoreModule.forRoot({
             board: BoardReducer,
+            card: CardReducer,
             label: LabelReducer,
             list: ListReducer,
             trello: TrelloReducer,
