@@ -25,6 +25,7 @@ export class AddListsAction implements Action {
 
 export class GetAllBoards implements Action {
     readonly type = TrelloTypes.GET_BOARDS;
+    constructor(public payload = null) {}
 }
 
 export type TrelloAction = AddBoardAction |
