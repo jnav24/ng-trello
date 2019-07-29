@@ -12,6 +12,10 @@ import { StoreModule } from '@ngrx/store';
 import {TrelloReducer} from './store/reducers/trello.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import {TrelloService} from './services/trello.service';
+import {EffectsModule} from '@ngrx/effects';
+import {TrelloEffect} from './store/effects/trello.effect';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +28,10 @@ import { environment } from '../environments/environment';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        EffectsModule.forRoot([
+            TrelloEffect,
+        ]),
+        HttpClientModule,
         MatCardModule,
         MatInputModule,
         MatProgressSpinnerModule,
@@ -33,7 +41,9 @@ import { environment } from '../environments/environment';
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     ],
-    providers: [],
+    providers: [
+        TrelloService,
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
