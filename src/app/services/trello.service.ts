@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {BoardsModel} from '../store/models/board.model';
 import {CardModel} from '../store/models/card.model';
+import {LabelModel} from '../store/models/label.model';
 
 @Injectable()
 export class TrelloService {
@@ -31,5 +32,12 @@ export class TrelloService {
             fields: 'name,idList,url,idLabels,desc',
         };
         return this.http.get<CardModel[]>(`${this.url}boards/${boardId}/cards`, { params });
+    }
+
+    getAllLabels(labelId: string) {
+        const params = {
+            ...this.params,
+        };
+        return this.http.get<LabelModel[]>(`${this.url}boards/${labelId}/labels`, { params });
     }
 }

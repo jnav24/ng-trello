@@ -25,9 +25,6 @@ export class CardEffect {
                     this.store.select(store => store.selected.board),
                 ),
             )),
-            tap(([action, boardId]) => {
-                return boardId;
-            }),
             switchMap(
                 ([action, boardId]) => this.trelloService.getAllCards(boardId)
                     .pipe(

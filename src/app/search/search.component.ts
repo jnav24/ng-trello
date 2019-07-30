@@ -8,6 +8,7 @@ import {LabelModel} from '../store/models/label.model';
 import {ListModel} from '../store/models/list.model';
 import {AddSelectedBoard} from '../store/actions/selected.action';
 import {GetCardsAction} from '../store/actions/card.action';
+import {GetLabelAction} from '../store/actions/label.action';
 
 @Component({
     selector: 'app-search',
@@ -62,6 +63,7 @@ export class SearchComponent implements OnInit {
         // get all cards
         this.store.dispatch(new GetCardsAction());
         // get all labels
+        this.store.dispatch(new GetLabelAction());
         // get all lists
     }
 
