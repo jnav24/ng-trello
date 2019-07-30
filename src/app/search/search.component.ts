@@ -7,6 +7,7 @@ import {BoardsModel} from '../store/models/board.model';
 import {LabelModel} from '../store/models/label.model';
 import {ListModel} from '../store/models/list.model';
 import {AddSelectedBoard} from '../store/actions/selected.action';
+import {GetCardsAction} from '../store/actions/card.action';
 
 @Component({
     selector: 'app-search',
@@ -59,6 +60,7 @@ export class SearchComponent implements OnInit {
         // add board value to selected board state
         this.store.dispatch(new AddSelectedBoard(this.form.board));
         // get all cards
+        this.store.dispatch(new GetCardsAction());
         // get all labels
         // get all lists
     }
