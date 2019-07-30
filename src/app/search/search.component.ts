@@ -6,7 +6,7 @@ import {GetAllBoardsAction} from '../store/actions/board.action';
 import {BoardsModel} from '../store/models/board.model';
 import {LabelModel} from '../store/models/label.model';
 import {ListModel} from '../store/models/list.model';
-import {AddSelectedBoard, ResetSelected} from '../store/actions/selected.action';
+import {AddSelectedBoard, AddSelectedLabel, AddSelectedList, AddSelectedSearch, ResetSelected} from '../store/actions/selected.action';
 import {GetCardsAction, ResetCardsAction} from '../store/actions/card.action';
 import {GetLabelAction, ResetLabelAction} from '../store/actions/label.action';
 import {GetListAction, ResetListAction} from '../store/actions/list.action';
@@ -65,24 +65,16 @@ export class SearchComponent implements OnInit {
     }
 
     updateLabel() {
-        console.log('update label');
-        // add selected label state
+        this.store.dispatch(new AddSelectedLabel(this.form.label));
     }
 
     updateList() {
-        console.log('update list');
-        // add selected list state
+        this.store.dispatch(new AddSelectedList(this.form.list));
     }
 
     updateSearch(e) {
-        if (e instanceof FocusEvent) {
-            console.log('blurred: ' + this.form.search);
-            // add selected search state
-        }
-
-        if (e instanceof KeyboardEvent && e.key === 'Enter') {
-            console.log('key down: ' + this.form.search);
-            // add selected search state
+        if (e instanceof FocusEvent || (e instanceof KeyboardEvent && e.key === 'Enter')) {
+            this.store.dispatch(new AddSelectedSearch(this.form.search));
         }
     }
 }
