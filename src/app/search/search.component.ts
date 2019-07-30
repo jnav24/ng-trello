@@ -7,9 +7,9 @@ import {BoardsModel} from '../store/models/board.model';
 import {LabelModel} from '../store/models/label.model';
 import {ListModel} from '../store/models/list.model';
 import {AddSelectedBoard, ResetSelected} from '../store/actions/selected.action';
-import {GetCardsAction} from '../store/actions/card.action';
-import {GetLabelAction} from '../store/actions/label.action';
-import {GetListAction} from '../store/actions/list.action';
+import {GetCardsAction, ResetCardsAction} from '../store/actions/card.action';
+import {GetLabelAction, ResetLabelAction} from '../store/actions/label.action';
+import {GetListAction, ResetListAction} from '../store/actions/list.action';
 
 @Component({
     selector: 'app-search',
@@ -39,9 +39,9 @@ export class SearchComponent implements OnInit {
     }
 
     resetEverything() {
-        // reset card state
-        // reset label state
-        // reset list state
+        this.store.dispatch(new ResetCardsAction());
+        this.store.dispatch(new ResetLabelAction());
+        this.store.dispatch(new ResetListAction());
         this.resetForm();
     }
 
