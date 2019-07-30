@@ -6,7 +6,7 @@ import {GetAllBoardsAction} from '../store/actions/board.action';
 import {BoardsModel} from '../store/models/board.model';
 import {LabelModel} from '../store/models/label.model';
 import {ListModel} from '../store/models/list.model';
-import {AddSelectedBoard} from '../store/actions/selected.action';
+import {AddSelectedBoard, ResetSelected} from '../store/actions/selected.action';
 import {GetCardsAction} from '../store/actions/card.action';
 import {GetLabelAction} from '../store/actions/label.action';
 import {GetListAction} from '../store/actions/list.action';
@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
         this.form.label = '';
         this.form.list = '';
         this.form.search = '';
-        // reset the selected state
+        this.store.dispatch(new ResetSelected());
     }
 
     updateBoard() {
