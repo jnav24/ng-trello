@@ -41,7 +41,7 @@
                         <mat-label>Labels</mat-label>
                         <mat-select [(value)]="form.label" (valueChange)="updateLabel()">
                             <mat-option *ngFor="let label of trelloLabels$ | async" [value]="label.id">
-                                {{ label.name }}
+                                {{ label.name || 'Blank' }} ({{ label.color || 'none'}})
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
