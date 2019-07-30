@@ -21,14 +21,21 @@
             <div class="form-row justify-space-between">
                 <div class="form-group lg3">
                     <mat-form-field class="form-full">
-                        <input type="text" (blur)="updateSearch($event)" (keydown)="updateSearch($event)" matInput placeholder="Search by name" [(ngModel)]="form.search">
+                        <input
+                            [disabled]="!(selectedBoard$ | async) || !(selectedBoard$ | async).trim()"
+                            type="text"
+                            (blur)="updateSearch($event)"
+                            (keydown)="updateSearch($event)"
+                            matInput
+                            placeholder="Search by name"
+                            [(ngModel)]="form.search">
                     </mat-form-field>
                 </div>
 
                 <div class="form-group lg4">
                     <mat-form-field class="form-full">
                         <mat-label>Lists</mat-label>
-                        <mat-select [(value)]="form.list" (valueChange)="updateList()">
+                        <mat-select [(value)]="form.list" (valueChange)="updateList()" [disabled]="!(trelloLists$ | async).length">
                             <mat-option *ngFor="let list of trelloLists$ | async" [value]="list.id">
                                 {{ list.name }}
                             </mat-option>
@@ -39,7 +46,7 @@
                 <div class="form-group lg4">
                     <mat-form-field class="form-full">
                         <mat-label>Labels</mat-label>
-                        <mat-select [(value)]="form.label" (valueChange)="updateLabel()">
+                        <mat-select [(value)]="form.label" (valueChange)="updateLabel()" [disabled]="!(trelloLabels$ | async).length">
                             <mat-option *ngFor="let label of trelloLabels$ | async" [value]="label.id">
                                 {{ label.name || 'Blank' }} ({{ label.color || 'none'}})
                             </mat-option>

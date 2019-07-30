@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
     trelloBoards$: Observable<BoardsModel[]>;
     trelloLabels$: Observable<LabelModel[]>;
     trelloLists$: Observable<ListModel[]>;
+    selectedBoard$: Observable<string>;
     form: any = {
         board: '',
         label: '',
@@ -35,6 +36,7 @@ export class SearchComponent implements OnInit {
         this.trelloBoards$ = this.store.select(store => store.boards);
         this.trelloLabels$ = this.store.select(store => store.labels);
         this.trelloLists$ = this.store.select(store => store.list);
+        this.selectedBoard$ = this.store.select(store => store.selected.board);
         this.store.dispatch(new GetAllBoardsAction());
     }
 
