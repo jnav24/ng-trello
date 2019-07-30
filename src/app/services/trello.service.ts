@@ -34,10 +34,18 @@ export class TrelloService {
         return this.http.get<CardModel[]>(`${this.url}boards/${boardId}/cards`, { params });
     }
 
-    getAllLabels(labelId: string) {
+    getAllLabels(boardId: string) {
         const params = {
             ...this.params,
         };
-        return this.http.get<LabelModel[]>(`${this.url}boards/${labelId}/labels`, { params });
+        return this.http.get<LabelModel[]>(`${this.url}boards/${boardId}/labels`, { params });
+    }
+
+    getAllLists(boardId: string) {
+        const params = {
+            ...this.params,
+            fields: 'name,url',
+        };
+        return this.http.get<LabelModel[]>(`${this.url}boards/${boardId}/lists`, { params });
     }
 }

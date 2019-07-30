@@ -9,6 +9,7 @@ import {ListModel} from '../store/models/list.model';
 import {AddSelectedBoard} from '../store/actions/selected.action';
 import {GetCardsAction} from '../store/actions/card.action';
 import {GetLabelAction} from '../store/actions/label.action';
+import {GetListAction} from '../store/actions/list.action';
 
 @Component({
     selector: 'app-search',
@@ -56,15 +57,11 @@ export class SearchComponent implements OnInit {
     }
 
     updateBoard() {
-        console.log('update board');
         this.resetEverything();
-        // add board value to selected board state
         this.store.dispatch(new AddSelectedBoard(this.form.board));
-        // get all cards
         this.store.dispatch(new GetCardsAction());
-        // get all labels
         this.store.dispatch(new GetLabelAction());
-        // get all lists
+        this.store.dispatch(new GetListAction());
     }
 
     updateLabel() {
